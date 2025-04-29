@@ -28,12 +28,15 @@ class CoachController extends Controller
 
         Coach::create($request->all());
 
-        return redirect()->route('coaches.index');
+        return redirect()->route('admin.dashboard')->with('success', 'Coach created successfully!');
     }
 
     public function show(Coach $coach)
     {
-        return view('coaches.show', compact('coach'));
+
+        $maintenanceLogs = $coach->maintenanceLogs;
+        return view('coaches.show', compact('coach', 'maintenanceLogs'));
+
     }
 
     public function edit(Coach $coach)
@@ -51,7 +54,8 @@ class CoachController extends Controller
 
         $coach->update($request->all());
 
-        return redirect()->route('coaches.index');
+        return redirect()->route('coaches.show', $coach->id)->with('success', 'Coach updated successfully!');
+
     }
 
     public function destroy(Coach $coach)

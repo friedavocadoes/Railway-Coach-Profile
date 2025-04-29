@@ -34,6 +34,6 @@ class RegisterController extends Controller
             'role' => $request->role,
         ]);
 
-        return redirect('/')->with('success', 'Account created successfully. Please login.');
+        return redirect('/auth/login')->with('success', 'Account created successfully. Please login.');
     }
 }

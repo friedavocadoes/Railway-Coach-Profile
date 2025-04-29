@@ -38,11 +38,13 @@ Route::middleware('auth')->group(function () {
         }
     })->name('dashboard');
 
-    // Admin Dashboard Route
-    Route::get('admin-dashboard', [DashboardController::class, 'adminDashboard'])->name('admin.dashboard');
 
-    // Technician Dashboard Route
-    Route::get('technician-dashboard', [DashboardController::class, 'technicianDashboard'])->name('technician.dashboard');
+    Route::prefix('dashboard')->group(function () {
+        // Admin Dashboard Route
+        Route::get('admin', [DashboardController::class, 'adminDashboard'])->name('admin.dashboard');
+        // Technician Dashboard Route
+        Route::get('technician', [DashboardController::class, 'technicianDashboard'])->name('technician.dashboard');
+    });
 
     // Resource controllers for maintenance logs and coaches
     Route::resource('maintenance-logs', MaintenanceLogController::class);

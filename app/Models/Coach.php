@@ -14,6 +14,8 @@ class Coach extends Model
     // Relationship to MaintenanceLog
     public function maintenanceLogs()
     {
-        return $this->hasMany(MaintenanceLog::class);
+        return $this->hasMany(MaintenanceLog::class, 'coach_id');
+
+
     }
 }

@@ -32,7 +32,7 @@ class LoginController extends Controller
         if ($user && Hash::check($validated['password'], $user->password)) {
             // Authentication successful, store session or cookie
             Auth::login($user);
-            session(['user_role' => $user->role, 'user_id' => $user->id]);
+            session(['user_role' => $user->role, 'user_id' => $user->id, 'username' => $user->username]);
 
             // Redirect to dashboard
             return redirect()->route('dashboard');

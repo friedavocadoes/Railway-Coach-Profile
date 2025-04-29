@@ -20,16 +20,28 @@ class MaintenanceLogController extends Controller
 
     public function store(Request $request)
     {
+        // $request->validate([
+        //     'coach_id' => 'required|exists:coaches,id',
+        //     'maintenance_date' => 'required|date',
+        //     'description' => 'required|string',
+        //     'performed_by' => 'required|string',
+        // ]);
+
+        // MaintenanceLog::create($request->all());
+
+        // return redirect()->route('maintenance-logs.index');
+
         $request->validate([
             'coach_id' => 'required|exists:coaches,id',
             'maintenance_date' => 'required|date',
-            'description' => 'required|string',
             'performed_by' => 'required|string',
+            'description' => 'required|string',
         ]);
 
         MaintenanceLog::create($request->all());
 
-        return redirect()->route('maintenance-logs.index');
+        return back()->with('success', 'Maintenance log added successfully!');
+
     }
 
     public function show(MaintenanceLog $maintenanceLog)

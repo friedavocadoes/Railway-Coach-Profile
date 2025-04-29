@@ -15,12 +15,13 @@
 
     @include('partials.navbar')
 
-    <main class="flex-grow">
+    <main class="flex-grow mt-20">
         @yield('content')
     </main>
 
     @include('partials.footer')
 
+    @yield('scripts')
 </body>
 
 </html>

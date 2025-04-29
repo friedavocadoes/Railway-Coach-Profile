@@ -15,6 +15,14 @@
                 </div>
             @endif
 
+            @if(session('success'))
+                <div class="mb-4">
+                    <ul class="list-disc list-inside text-sm text-green-600">
+                        {{ session('success') }}
+                    </ul>
+                </div>
+            @endif
+
             <form method="POST" action="{{ route('login') }}">
                 @csrf
 

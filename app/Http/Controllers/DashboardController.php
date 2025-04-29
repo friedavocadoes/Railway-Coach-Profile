@@ -14,8 +14,11 @@ class DashboardController extends Controller
      */
     public function adminDashboard()
     {
-        // Logic for admin dashboard if needed
-        return view('dashboard.admin'); // Return the admin dashboard view
+        $logs = \App\Models\MaintenanceLog::with('coach')->get();
+        $coaches = \App\Models\Coach::all();
+
+        return view('dashboard.admin', compact('logs', 'coaches'));
+
     }
 
     /**
@@ -25,7 +28,10 @@ class DashboardController extends Controller
      */
     public function technicianDashboard()
     {
-        // Logic for technician dashboard if needed
-        return view('dashboard.technician'); // Return the technician dashboard view
+        $logs = \App\Models\MaintenanceLog::with('coach')->where('performed_by', auth()->user()->name)->get();
+        $coaches = \App\Models\Coach::all();
+
+        return view('dashboard.technician', compact('logs', 'coaches'));
+
     }
 }
