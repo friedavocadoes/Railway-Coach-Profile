@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use App\Models\MaintenanceLog;
+use App\Models\Coach;
 
 class DashboardController extends Controller
 {
@@ -14,8 +16,8 @@ class DashboardController extends Controller
      */
     public function adminDashboard()
     {
-        $logs = \App\Models\MaintenanceLog::with('coach')->get();
-        $coaches = \App\Models\Coach::all();
+        $logs = MaintenanceLog::with('coach')->get();
+        $coaches = Coach::all();
 
         return view('dashboard.admin', compact('logs', 'coaches'));
 
@@ -28,8 +30,8 @@ class DashboardController extends Controller
      */
     public function technicianDashboard()
     {
-        $logs = \App\Models\MaintenanceLog::with('coach')->where('performed_by', auth()->user()->name)->get();
-        $coaches = \App\Models\Coach::all();
+        $logs = MaintenanceLog::with('coach')->get();
+        $coaches = Coach::all();
 
         return view('dashboard.technician', compact('logs', 'coaches'));
 

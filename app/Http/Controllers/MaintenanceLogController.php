@@ -59,13 +59,14 @@ class MaintenanceLogController extends Controller
         $request->validate([
             'coach_id' => 'required|exists:coaches,id',
             'maintenance_date' => 'required|date',
-            'description' => 'required|string',
             'performed_by' => 'required|string',
+            'description' => 'required|string',
         ]);
 
         $maintenanceLog->update($request->all());
 
-        return redirect()->route('maintenance-logs.index');
+        return back()->with('success', 'Maintenance log updated successfully!');
+
     }
 
     public function destroy(MaintenanceLog $maintenanceLog)

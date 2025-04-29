@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="min-h-screen bg-gradient-to-br from-blue-100 via-white to-blue-100 p-8 pt-20">
+    <div class="min-h-screen  p-8 pt-20">
         <h2 class="text-3xl font-bold mb-6 text-center text-gray-800">Admin Dashboard</h2>
 
         <!-- Include Maintenance Logs Section -->
@@ -11,7 +11,8 @@
         <!-- Coaches Section -->
         <div class="bg-white/30 backdrop-blur-md p-6 rounded-xl shadow-lg">
             <h3 class="text-2xl font-bold mb-4 text-gray-800">Coaches</h3>
-            <button id="openModal" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">Add New Coach</button>
+            <button id="openModal" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 cursor-pointer">Add New
+                Coach</button>
             <table class="w-full border-collapse border border-gray-300 mt-4">
                 <thead>
                     <tr class="bg-gray-200">
@@ -27,17 +28,18 @@
                             <td class="border border-gray-300 px-4 py-2">{{ $coach->id }}</td>
                             <td class="border border-gray-300 px-4 py-2">{{ $coach->coach_number }}</td>
                             <td class="border border-gray-300 px-4 py-2">{{ $coach->coach_type }}</td>
-                            <td class="border border-gray-300 px-4 py-2">
-                                <a href="{{ route('coaches.show', $coach->id) }}" class="text-blue-600 hover:underline">View</a>
+                            <td class="border border-gray-300 px-4 py-2 text-center">
+                                <a href="{{ route('coaches.show', $coach->id) }}"
+                                    class="text-blue-600 hover:underline cursor-pointer">View</a>
                                 |
-                                <button class="text-green-600 hover:underline openEditModal" data-id="{{ $coach->id }}"
-                                    data-number="{{ $coach->coach_number }}" data-type="{{ $coach->coach_type }}"
-                                    data-description="{{ $coach->description }}">Edit</button>
-                                |
+                                <button class="text-green-600 hover:underline openCoachEdit cursor-pointer" data-id="{{ $coach->id }}"
+                                                    data-number="{{ $coach->coach_number }}" data-type="{{ $coach->coach_type }}"
+                                                    data-description="{{ $coach->description }}">Edit</button>
+                                                |
                                 <form action="{{ route('coaches.destroy', $coach->id) }}" method="POST" class="inline">
                                     @csrf
                                     @method('DELETE')
-                                    <button type="submit" class="text-red-600 hover:underline">Delete</button>
+                                    <button type="submit" class="text-red-600 hover:underline cursor-pointer">Delete</button>
                                 </form>
                             </td>
                         </tr>
@@ -78,7 +80,7 @@
     </div>
 
     <!-- Modal for Editing a Coach -->
-    <div id="editCoachModal" class="absolute flex inset-0 bg-black/40 backdrop-blur-lg hidden items-center justify-center">
+    <div id="editCoachModal" class="fixed flex inset-0 bg-black/40 backdrop-blur-lg hidden items-center justify-center">
         <div class="bg-white p-6 rounded-lg shadow-lg w-1/3">
             <h3 class="text-2xl font-bold mb-4">Edit Coach</h3>
             <form id="editCoachForm" method="POST">
@@ -100,7 +102,7 @@
                         class="w-full border border-gray-300 rounded px-4 py-2"></textarea>
                 </div>
                 <div class="flex justify-end">
-                    <button type="button" id="closeEditModal"
+                    <button type="button" id="closeCoachEdit"
                         class="bg-gray-500 text-white px-4 py-2 rounded hover:bg-gray-600 mr-2">Cancel</button>
                     <button type="submit" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">Update</button>
                 </div>
@@ -121,7 +123,8 @@
             });
         });
 
-        document.querySelectorAll('.openEditModal').forEach(button => {
+        document.querySelectorAll('.openCoachEdit').forEach(button => {
+            console.log("coach");
             button.addEventListener('click', function () {
                 const coachId = this.dataset.id;
                 const coachNumber = this.dataset.number;
@@ -143,7 +146,7 @@
         });
 
         // Close Edit Modal
-        document.getElementById('closeEditModal').addEventListener('click', function () {
+        document.getElementById('closeCoachEdit').addEventListener('click', function () {
             document.getElementById('editCoachModal').classList.add('hidden');
         });
 

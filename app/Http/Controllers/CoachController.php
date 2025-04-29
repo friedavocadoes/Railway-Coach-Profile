@@ -61,6 +61,6 @@ class CoachController extends Controller
     public function destroy(Coach $coach)
     {
         $coach->delete();
-        return redirect()->route('coaches.index');
+        return redirect()->route('admin.dashboard');
     }
 }

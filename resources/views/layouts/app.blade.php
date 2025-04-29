@@ -15,13 +15,14 @@
 
     @include('partials.navbar')
 
-    <main class="flex-grow mt-20">
+    <main class="flex-grow bg-gradient-to-br from-blue-100 via-white to-blue-100 mt-20">
         @yield('content')
     </main>
 
     @include('partials.footer')
 
     @yield('scripts')
+    @yield('comp-scripts')
 </body>
 
 </html>

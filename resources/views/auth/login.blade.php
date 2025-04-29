@@ -29,14 +29,14 @@
                 <div class="mb-4">
                     <label class="block text-gray-700 font-semibold mb-1">Username</label>
                     <input type="text" name="username"
-                        class="w-full rounded-lg border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-100 p-2"
+                        class="w-full rounded-lg border border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-100 p-2"
                         required>
                 </div>
 
                 <div class="mb-4">
                     <label class="block text-gray-700 font-semibold mb-1">Password</label>
                     <input type="password" name="password"
-                        class="w-full rounded-lg border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-100 p-2"
+                        class="w-full rounded-lg border border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-100 p-2"
                         required>
                 </div>
 
