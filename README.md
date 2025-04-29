@@ -270,3 +270,5 @@ Made with ❤️ using:
 ## 📜 License
 
 MIT © Gautham Madhu
+
+[Support](SUPPORT.md)
