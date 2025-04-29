@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="min-h-screen bg-gradient-to-br from-blue-100 via-white to-blue-100 flex items-center justify-center">
+    <div class="min-h-screen bg-gradient-to-br from-blue-100 via-white to-blue-100 flex items-center justify-center -mx-40">
         <div class="bg-white/30 backdrop-blur-md p-8 mt-16 rounded-xl shadow-lg w-full max-w-md">
             <h2 class="text-3xl font-bold mb-6 text-center text-gray-800">Create Account</h2>
 

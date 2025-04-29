@@ -3,7 +3,7 @@
 
 @section('content')
     <section
-        class="relative flex items-center justify-center min-h-[calc(100vh-80px)] bg-gradient-to-br from-blue-100 via-white to-blue-200 overflow-hidden">
+        class="-mx-40 relative flex items-center justify-center min-h-[calc(100vh-80px)] bg-gradient-to-br from-blue-100 via-white to-blue-200 overflow-hidden">
 
         <!-- Glassmorphic Card -->
         <div class="bg-white/30 backdrop-blur-md rounded-3xl shadow-lg p-10 max-w-3xl mx-4 text-center">
@@ -17,11 +17,11 @@
             </p>
 
             <div class="flex flex-col md:flex-row justify-center gap-6">
-                <a href="#coaches"
+                <a href="/register"
                     class="px-8 py-4 bg-blue-900 text-white font-semibold rounded-full hover:bg-blue-800 transition">
-                    View Coaches
+                    Sign up as a Technician
                 </a>
-                <a href="#maintenance"
+                <a href="/dashboard"
                     class="px-8 py-4 bg-white/40 text-blue-900 font-semibold rounded-full hover:bg-white/60 transition">
                     Log Maintenance
                 </a>

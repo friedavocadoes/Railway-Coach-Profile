@@ -50,7 +50,7 @@
     </div>
 
     <!-- Modal for Adding a New Coach -->
-    <div id="coachModal" class="absolute flex inset-0 bg-black/40 backdrop-blur-lg hidden items-center justify-center">
+    <div id="coachModal" class="fixed flex inset-0 bg-black/40 backdrop-blur-lg hidden items-center justify-center">
         <div class="bg-white p-6 rounded-lg shadow-lg w-1/3">
             <h3 class="text-2xl font-bold mb-4">Add New Coach</h3>
             <form id="createCoachForm" action="{{ route('coaches.store') }}" method="POST">
@@ -72,8 +72,8 @@
                 </div>
                 <div class="flex justify-end">
                     <button type="button" id="closeModal"
-                        class="bg-gray-500 text-white px-4 py-2 rounded hover:bg-gray-600 mr-2">Cancel</button>
-                    <button type="submit" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">Create</button>
+                        class="cursor-pointer bg-gray-500 text-white px-4 py-2 rounded hover:bg-gray-600 mr-2">Cancel</button>
+                    <button type="submit" class="cursor-pointer bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">Create</button>
                 </div>
             </form>
         </div>
@@ -103,8 +103,8 @@
                 </div>
                 <div class="flex justify-end">
                     <button type="button" id="closeCoachEdit"
-                        class="bg-gray-500 text-white px-4 py-2 rounded hover:bg-gray-600 mr-2">Cancel</button>
-                    <button type="submit" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">Update</button>
+                        class="cursor-pointer bg-gray-500 text-white px-4 py-2 rounded hover:bg-gray-600 mr-2">Cancel</button>
+                    <button type="submit" class="cursor-pointer bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">Update</button>
                 </div>
             </form>
         </div>

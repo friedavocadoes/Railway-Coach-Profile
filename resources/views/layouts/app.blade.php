@@ -15,7 +15,7 @@
 
     @include('partials.navbar')
 
-    <main class="flex-grow bg-gradient-to-br from-blue-100 via-white to-blue-100 mt-20">
+    <main class="flex-grow bg-gradient-to-br from-blue-100 via-white to-blue-100 pt-20 px-40">
         @yield('content')
     </main>
 

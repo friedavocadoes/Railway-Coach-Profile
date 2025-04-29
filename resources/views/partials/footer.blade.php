@@ -1,5 +1,5 @@
 <!-- resources/views/partials/footer.blade.php -->
-<footer class="bg-gray-900 text-gray-300 pt-12 pb-6 mt-12">
+<footer class="bg-gray-900 text-gray-300 pt-12 pb-6 ">
     <div class="max-w-7xl mx-auto px-4 flex flex-col md:flex-row justify-between">
 
         <div class="mb-8 md:mb-0">
@@ -12,9 +12,9 @@
                 <h3 class="text-white font-semibold mb-4">Navigation</h3>
                 <ul class="space-y-2">
                     <li><a href="/" class="hover:text-white">Home</a></li>
-                    <li><a href="#" class="hover:text-white">Coaches</a></li>
-                    <li><a href="#" class="hover:text-white">Maintenance</a></li>
-                    <li><a href="#" class="hover:text-white">Reports</a></li>
+                    <li><a href="/dashboard" class="hover:text-white">Coaches</a></li>
+                    <li><a href="/dashboard" class="hover:text-white">Maintenance</a></li>
+                    <!-- <li><a href="#" class="hover:text-white">Reports</a></li> -->
                 </ul>
             </div>
 

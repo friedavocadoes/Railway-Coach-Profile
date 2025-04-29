@@ -40,7 +40,8 @@
         </div>
 
         <div class="flex justify-end mt-4">
-            <button type="submit" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">Add Log</button>
+            <button type="submit" class="cursor-pointer bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">Add
+                Log</button>
         </div>
     </form>
 
@@ -65,7 +66,7 @@
                     <td class="border border-gray-300 px-4 py-2">{{ $log->maintenance_date }}</td>
                     <td class="border border-gray-300 px-4 py-2">{{ $log->description }}</td>
                     <td class="border border-gray-300 px-4 py-2">
-                        <button class="text-green-600 hover:underline openEditModal" data-id="{{ $log->id }}"
+                        <button class="cursor-pointer text-green-600 hover:underline openEditModal" data-id="{{ $log->id }}"
                             data-coach-id="{{ $log->coach_id }}" data-date="{{ $log->maintenance_date }}"
                             data-performed-by="{{ $log->performed_by }}"
                             data-description="{{ $log->description }}">Edit</button>
@@ -78,7 +79,7 @@
 
 <!-- Edit Maintenance Log Modal -->
 <div id="editLogModal"
-    class="fixed z-40 h-screen flex inset-0 bg-black/40 backdrop-blur-md  hidden items-center justify-center">
+    class="fixed z-40 h-screen pt-20 flex inset-0 bg-black/40 backdrop-blur-md  hidden items-center justify-center">
     <div class="bg-white p-6 rounded-lg shadow-lg w-1/3">
         <h3 class="text-2xl font-bold mb-4">Edit Maintenance Log</h3>
         <form id="editLogForm" method="POST">
@@ -110,8 +111,9 @@
             </div>
             <div class="flex justify-end">
                 <button type="button" id="closeEditModal"
-                    class="bg-gray-500 text-white px-4 py-2 rounded hover:bg-gray-600 mr-2">Cancel</button>
-                <button type="submit" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">Update</button>
+                    class="bg-gray-500 cursor-pointer text-white px-4 py-2 rounded hover:bg-gray-600 mr-2">Cancel</button>
+                <button type="submit"
+                    class="cursor-pointer bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">Update</button>
             </div>
         </form>
     </div>
